@@ -340,6 +340,157 @@
             font-size: 1.2rem;
         }
         
+
+/* ------------------------------
+   Certifications Section - Updated Layout
+------------------------------ */
+.certifications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+ 
+.certification-category {
+  margin-bottom: 30px;
+}
+ 
+.certification-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+ 
+.certifications-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+ 
+.certificate-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 200px;
+}
+ 
+.certificate-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+ 
+.certificate-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+ 
+.certificate-item:hover img {
+  transform: scale(1.05);
+}
+ 
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+ 
+.certificate-item:hover .certificate-overlay {
+  opacity: 1;
+}
+ 
+.view-certificate-btn {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+ 
+.view-certificate-btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+ 
+/* Certificate Modal */
+.certificate-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.certificate-modal.active {
+  display: flex;
+}
+ 
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+}
+ 
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+ 
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+/* Responsive Design for Certifications */
+@media (max-width: 768px) {
+  .certifications-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+ 
+@media (max-width: 576px) {
+  .certifications-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
         /* Projects Section */
         .projects {
             background: rgba(26, 26, 26, 0.7);
@@ -680,6 +831,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certificationss</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -694,9 +846,9 @@
                     <h1>Hi, I'm <span>Anele Mgoboza</span></h1>
                     <p>A motivated tech enthusiast passionate about AI, continuous learning, and building innovative solutions. I bring fresh perspectives and strong analytical skills to innovative projects.</p>
                     <a href="#contact" class="btn">Get In Touch</a>
-                    <a href="Anele Mgoboza.docx" class="btn" target="_blank" style="margin-left: 15px;">
-                        <i class="fas fa-file-alt"></i> View My Resume
-                    </a>
+                    <a href="Anele Mgoboza Resume pdf.pdf" class="btn" download style="margin-left: 15px;">
+    <i class="fas fa-file-alt"></i> View My Resume
+</a>
                 </div>
                 <div class="hero-image">
                     <div class="image-placeholder">
@@ -759,25 +911,25 @@
                     <ul class="skill-list">
                         <li>
                             <i class="fas fa-certificate"></i>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/KZNQAWMMCNZR" target="_blank" style="color:inherit; text-decoration:underline;">
-                                Coursera: AI for Everyone
+                            <a href="images/ai.png" target="_blank" style="color:inherit; text-decoration:underline;">
+                               CAPACITI Quiz: AI for Everyone
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-certificate"></i>
-                            <a href="https://www.coursera.org/account/accomplishments/verify/XXXO2WCC3HMP" target="_blank" style="color:inherit; text-decoration:underline;">
-                                Coursera: Generative AI
+                            <a href="images/advance.png" target="_blank" style="color:inherit; text-decoration:underline;">
+                                CAPACITI Quiz: Advanced Styling
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-trophy"></i>
-                            <a href="AI for Everyone.pdf" target="_blank" style="color:inherit; text-decoration:underline;">
-                                CAPACITI Quiz: AI for Everyone
+                            <a href="images/web.png" target="_blank" style="color:inherit; text-decoration:underline;">
+                                CAPACITI Quiz: Web Foundations
                             </a>
                         </li>
                         <li>
                             <i class="fas fa-trophy"></i>
-                            <a href="Introduction to AI & Generative AI.pdf" target="_blank" style="color:inherit; text-decoration:underline;">
+                            <a href="images/intro.png" target="_blank" style="color:inherit; text-decoration:underline;">
                                 CAPACITI Quiz: Introduction to AI
                             </a>
                         </li>
@@ -843,6 +995,89 @@
         </div>
     </div>
 </section>
+
+
+<!-- Certifications Section -->
+<section id="certifications">
+<div class="container">
+<h2 style="text-align: center; margin-bottom: 20px;">Certifications</h2>
+<p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Here are some of the certifications I've achieved through continuous learning and professional development.</p>
+<div class="certifications-container">
+<div class="certification-category">
+<h3>Technical Certifications</h3>
+<div class="certifications-gallery">
+<div class="certificate-item" data-certificate="assets/quiz2.png">
+<img src="images/advance.png" alt="Certificate 1">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/khenso.png">
+<img src="images/web.png" alt="Certificate 3">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/intel.png">
+<img src="images/ai.png" alt="Certificate 3">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/ibm.png">
+<img src="images/intro.png" alt="Certificate 4">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/ai.png">
+<img src="images/PR1.png" alt="Certificate 5">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="certification-category">
+<h3>Professional Certifications</h3>
+<div class="certifications-gallery">
+<div class="certificate-item" data-certificate="assets/comm1.png">
+<img src="images/PR.png" alt="Certificate 2">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/time.png">
+<img src="assets/time.png" alt="Certificate 6">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/comm2.png">
+<img src="assets/comm2.png" alt="Certificate 7">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+<div class="certificate-item" data-certificate="assets/reselience.png">
+<img src="assets/reselience.png" alt="Certificate 6">
+<div class="certificate-overlay">
+<button class="view-certificate-btn">View Certificate</button>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+ 
+<!-- Certificate Modal -->
+<div class="certificate-modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<img src="" alt="Certificate">
+</div>
+</div>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -981,6 +1216,79 @@
                 navLinks.classList.remove('open');
             });
         });
+
+// Certificate Modal Functionality
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const modal = document.querySelector('.certificate-modal');
+
+  const modalImg = modal.querySelector('img');
+
+  const closeBtn = modal.querySelector('.close-modal');
+
+  const certificateItems = document.querySelectorAll('.certificate-item');
+ 
+  // Open modal when certificate is clicked
+
+  certificateItems.forEach(item => {
+
+    item.addEventListener('click', function() {
+
+      const certificateSrc = this.getAttribute('data-certificate');
+
+      modalImg.src = certificateSrc;
+
+      modal.classList.add('active');
+
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+
+    });
+
+  });
+ 
+  // Close modal when X is clicked
+
+  closeBtn.addEventListener('click', function() {
+
+    modal.classList.remove('active');
+
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+
+  });
+ 
+  // Close modal when clicking outside the image
+
+  modal.addEventListener('click', function(e) {
+
+    if (e.target === modal) {
+
+      modal.classList.remove('active');
+
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+
+    }
+
+  });
+ 
+  // Close modal with Escape key
+
+  document.addEventListener('keydown', function(e) {
+
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+
+      modal.classList.remove('active');
+
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+
+    }
+
+  });
+
+});
+ 
+
+
 
         // Contact form handling
         (function() {
